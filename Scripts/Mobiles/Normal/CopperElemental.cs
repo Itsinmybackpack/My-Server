@@ -82,6 +82,14 @@ namespace Server.Mobiles
             this.AddLoot(LootPack.Gems, 2);
         }
 
+        public override void OnDeath( Container c )
+	{
+		base.OnDeath( c );
+
+                if (Utility.RandomDouble() < 0.5)
+                    c.DropItem(new RunicHammer( CraftResource.Copper, 50 ) );
+ 	}
+
         public override void CheckReflect(Mobile caster, ref bool reflect)
         {
             reflect = true; // Every spell is reflected back to the caster

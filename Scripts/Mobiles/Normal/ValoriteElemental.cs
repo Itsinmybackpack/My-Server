@@ -86,6 +86,14 @@ namespace Server.Mobiles
             this.AddLoot(LootPack.Gems, 4);
         }
 
+        public override void OnDeath( Container c )
+	{
+		base.OnDeath( c );
+
+                if (Utility.RandomDouble() < 0.5)
+                    c.DropItem(new RunicHammer( CraftResource.Valorite, 50 ) );
+ 	}
+
         public override void AlterMeleeDamageFrom(Mobile from, ref int damage)
         {
             if (from is BaseCreature)
