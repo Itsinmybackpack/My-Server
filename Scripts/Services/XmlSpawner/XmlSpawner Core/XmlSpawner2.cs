@@ -4735,7 +4735,8 @@ public static void _TraceEnd(int index)
 			catch
 			{
 				if (from != null)
-					from.SendMessage(33, "Error reading xml file {0}", filename); fileerror = true;
+					from.SendMessage(33, "Error reading xml file {0}", filename);
+                fileerror = true;
 			}
 			// close the file
 			fs.Close();

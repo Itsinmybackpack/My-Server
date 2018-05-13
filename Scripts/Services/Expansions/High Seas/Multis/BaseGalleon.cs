@@ -364,7 +364,7 @@ namespace Server.Multis
             if (c != null)
                 c.AddItem(newRune);
             else
-                c.MoveToWorld(from.Location, from.Map);
+                newRune.MoveToWorld(from.Location, from.Map);
 
             rune.Delete();
             return true;
